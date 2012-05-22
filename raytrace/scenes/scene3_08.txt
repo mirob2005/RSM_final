@@ -1,0 +1,72 @@
+
+SimplePerspectiveCamera {
+    center 0 0 10 
+    direction 0 0 -1
+    up 0 1 0
+    distance 15
+}
+
+Lights {
+    numLights 1
+    DirectionalLight {
+    position 0 10 0
+    direction 0 -1 0
+    color 1 1 1
+    angle 15
+    attenuation 0 0 0
+    }
+}
+
+Background { color 0.3 0.3 0.3 }
+
+Materials {
+    numMaterials 3
+    PhongMaterial {
+	diffuseColor 1 0 0
+	specularColor 1 1 1
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 0 1 0 
+	specularColor 1 1 1
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 0 0 1
+	specularColor 1 1 1
+	exponent 10
+    }
+}
+
+Group {
+    numObjects 5
+
+    MaterialIndex 0
+    Sphere {
+	center -1.75 1 0 
+        radius 0.75 
+    }
+    Triangle {
+	vertex0 1 1 1 
+    vertex1 2 1 1
+    vertex2 2 2 1
+    }
+
+
+    MaterialIndex 1
+    Plane {
+	normal 0 1 0 
+        offset -2 
+    }
+
+    MaterialIndex 2
+    Triangle {
+	vertex0 1 0 -1 
+    vertex1 2 0 -1
+    vertex2 2 -1 0
+    }
+    TriangleMesh {
+	ply_file sphere.ply
+    }
+}
+

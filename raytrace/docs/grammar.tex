@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{bnf}
+
+\begin{document}
+Based on\\ \small{http://groups.csail.mit.edu/graphics/classes/6.837/F04/assignments/assignment1/grammar.html}
+
+\begin{grammar}
+	[(colon) {::$\Rightarrow$}]
+	[(period) {\rule{1ex}{1ex}}]
+	[(semicolon) {$|$}]
+file: camera background materials group.
+
+camera: orthographicCamera
+
+orthographicCamera: "\verb!OrthographicCamera {!"\\
+    "\verb!center!" Vec3f\\
+    "\verb!direction!" Vec3f\\
+    "\verb!up!" Vec3f\\
+    "\verb!width!" float\\
+    "\verb!height!" float\\
+"\verb!}!".
+
+background: "\verb!Background {!"\\
+    "\verb!color!" Vec3f\\
+"\verb!}!".
+
+materials: "\verb!Materials {!"\\
+    "\verb!numMaterials!" int\\
+    Material\verb!{!numMaterials\verb!}!\\
+"\verb!}!".
+
+Material: "\verb!PhongMaterial {!"\\
+    diffuseColor Vec3f\\
+"\verb!}!"
+
+group: "\verb!Group {!"\\
+    "\verb!numObjects!" int\\
+    (object3D ; materialIndex object3D)\verb!{!\\
+"\verb!}!".
+
+object3D: group ; sphere
+
+sphere: "\verb!Sphere {!"\\
+    "\verb!center!" Vec3f\\
+    "\verb!radius!" float\\
+"\verb!}!".
+
+materialIndex: "\verb!MaterialIndex!" int
+
+Vec3f: float float float.
+
+int: [0-9]+.
+
+float: [0-9]+"\verb!.!"[0-9]*.
+
+\end{grammar}
+\end{document}

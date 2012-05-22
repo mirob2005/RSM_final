@@ -1,0 +1,63 @@
+
+OrthographicCamera {
+    center 0 0 10 
+    direction 0 0 -1
+    up 0 1 0
+}
+
+Lights {
+    numLights 1
+    PointLight {
+    position -10 10 0
+    color 1 1 1
+    attenuation 7 8 9
+    }
+}
+
+Background { color 0.3 0.3 0.3 }
+
+Materials {
+    numMaterials 3
+    PhongMaterial {
+	diffuseColor 1 0 0 
+    }
+    PhongMaterial {
+	diffuseColor 0 1 0 
+    }
+    PhongMaterial {
+	diffuseColor 0 0 1
+    }
+}
+
+Group {
+    numObjects 5
+
+    MaterialIndex 0
+    Sphere {
+	center 0 0 0 
+        radius 1 
+    }
+
+    MaterialIndex 1
+    Sphere {
+	center 1 1 1 
+        radius 0.75
+    }
+    Sphere {
+	center -1 -1 1 
+        radius 0.75
+    }
+
+    MaterialIndex 2
+    Sphere {
+	center -1 1 -1 
+        radius 0.75
+    }
+    Plane {
+	normal 0 1 1 
+        offset -2 
+    }
+}
+
+
+

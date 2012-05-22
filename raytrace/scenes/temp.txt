@@ -1,0 +1,93 @@
+
+PerspectiveCamera {
+    center 0 0 4
+    direction 0 0 -1
+    up 0 1 0
+    angle 100
+}
+
+Lights {
+    numLights 1
+    PointLight {
+    position 0 3.8 0
+    color 1 1 1
+    attenuation 0.15 0.15 0.15
+    }
+
+}
+
+Background { color 1.0 1.0 1.0 }
+
+Materials {
+    numMaterials 6
+    PhongMaterial {
+	diffuseColor 1 0 0
+	specularColor 0 0 0
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 1 1 1
+	specularColor 0 0 0
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 0 1 0
+	specularColor 0 0 0
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 0 0 1
+	specularColor 0 0 0
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 1 1 0
+	specularColor 0 0 0
+	exponent 10
+    }
+    PhongMaterial {
+	diffuseColor 0 1 1
+	specularColor 0 0 0
+	exponent 10
+    }
+}
+
+Group {
+    numObjects 7
+
+    MaterialIndex 0
+    Plane {
+	normal 1 0 0 
+        offset -4 
+    }  
+    MaterialIndex 1
+    Sphere {
+	center 0 -2 0 
+        radius 2 
+    }
+    Plane {
+	normal 0 0 1 
+        offset -4 
+    }
+    MaterialIndex 2
+    Plane {
+	normal -1 0 0 
+        offset -4 
+    }
+    MaterialIndex 3
+    Plane {
+	normal 0 1 0 
+        offset -4 
+    }
+    MaterialIndex 4
+    Plane {
+	normal 0 -1 0 
+        offset -4 
+    }
+    MaterialIndex 5
+    Plane {
+	normal 0 0 -1 
+        offset -4 
+    }
+}
+

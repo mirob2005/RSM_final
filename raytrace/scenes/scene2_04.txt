@@ -1,0 +1,55 @@
+
+OrthographicCamera {
+    center 0 0 10
+    direction 0 0 -1
+    up 0 1 0
+}
+
+Lights {
+    numLights 1
+    PointLight {
+    position 0 0 10
+    color 1 1 1
+    attenuation 0 0 0
+    }
+
+}
+
+Background { color 0.3 0.3 0.3 }
+
+Materials {
+    numMaterials 3
+    PhongMaterial {
+	diffuseColor 1 0 0 
+    }
+    PhongMaterial {
+	diffuseColor 0 1 0 
+    }
+    PhongMaterial {
+	diffuseColor 0 0 1
+    }
+}
+
+Group {
+    numObjects 3
+
+    MaterialIndex 0
+    Sphere {
+	center 0 0 -1 
+        radius 1 
+    }
+
+    MaterialIndex 1
+    Triangle {
+	vertex0 0 0 0 
+    vertex1 1 0 0
+    vertex2 1 1 0
+    }
+
+    MaterialIndex 2
+    Triangle {
+	vertex0 -0 0 0 
+    vertex1 -1 0 0
+    vertex2 -1 1 0
+    }
+}

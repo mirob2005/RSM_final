@@ -1,0 +1,40 @@
+
+SimplePerspectiveCamera {
+    center 0 0 10 
+    direction 0 0 -1
+    up 0 1 0
+    distance 35
+}
+
+Lights {
+    numLights 1
+    DirectionalLight {
+    position 0 0 10
+    direction 0 0 1
+    color 1 1 1
+    angle 15
+    attenuation 0 0 0
+    }
+}
+
+Background { color 0.3 0.3 0.3 }
+
+Materials {
+    numMaterials 1
+    PhongMaterial {
+	diffuseColor 1 1 1
+	specularColor 1 1 1
+	exponent 10
+    }
+}
+
+Group {
+    numObjects 1
+
+    MaterialIndex 0
+    Sphere {
+	center 0 0 0 
+        radius 1 
+    }
+}
+
